@@ -4,27 +4,28 @@
 // they have ordered. In this case, they will be able to observe that they have ordered 
 // three vanilla, two coffee, and one strawberry froyo.
 
-function flavorCount(string) {
+//Declare Prompt
+let froyo = prompt("Please insert your Froyo options");
 
-    let flavor = prompt("What Froyo Flavors would you like today?")
+// [const,let] valueName = {"key":value}
+let froyoFlavors = {}
 
-    if(flavor === null){
-        console.log("No Froyo for you then");
-        return 0;
-    }   
+const froyoArray = froyo.split(",");
 
-    let flavorChoices = flavor.split(",");
+// froyoArray.forEach((flavor, index)=> {
 
-    const flavorCount = {};
+//     // console.log(froyoArray[index]);
+//     console.log(flavor);
+// })
 
-
-    for(let i = 0; i < flavorChoices.length; i++) {
-        if(typeof flavorCount[flavorChoices[i]] === "undefined") {
-            flavorCount[flavorChoices[i]] = 1;
-        } else {flavorCount[flavorChoices[i]]++}
+for(let i = 0; i < froyoArray.length; i++){
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
+    if(froyoFlavors.hasOwnProperty(froyoArray[i])){
+        froyoFlavors[froyoArray[i]] +=1;
+    } else {
+        froyoFlavors[froyoArray[i]] = 1;
     }
-
-    console.log(flavorCount);
-    return flavorCount;
-
+    // console.log(froyoArray[i]);
 }
+
+console.log(froyoFlavors);
