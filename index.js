@@ -7,16 +7,9 @@
 //Declare Prompt
 let froyo = prompt("Please insert your Froyo options");
 
-// [const,let] valueName = {"key":value}
 let froyoFlavors = {}
 
 const froyoArray = froyo.split(",");
-
-// froyoArray.forEach((flavor, index)=> {
-
-//     // console.log(froyoArray[index]);
-//     console.log(flavor);
-// })
 
 for(let i = 0; i < froyoArray.length; i++){
     // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/hasOwnProperty
@@ -25,7 +18,6 @@ for(let i = 0; i < froyoArray.length; i++){
     } else {
         froyoFlavors[froyoArray[i]] = 1;
     }
-    // console.log(froyoArray[i]);
 }
 
 console.log(froyoFlavors);
